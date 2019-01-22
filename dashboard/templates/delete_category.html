@@ -1,0 +1,222 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Delete Category</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+
+    <link rel="stylesheet"  href="{% static 'css/light-bootstrap-dashboard.css' %}"/>
+    <link rel="stylesheet"  href = "{% static 'css/fonts/nucleo-icons.woff2' %}"/>
+    <link rel="stylesheet" href =  "{% static 'css/custom.css' %}" />
+
+  
+
+
+</head>
+
+<body>
+    <div class="wrapper">
+            <div class="sidebar" data-image="../assets/img/sidebar-5.jpg">
+                <div class="sidebar-wrapper">
+                    <!-- new side nav -->
+                        
+    
+                    <!-- End-->
+                    <div class="logo">
+                        <!-- if logged in should redirect to dashboard--> 
+                        <a href="{% url 'dashboard:dashboard' %}" class="simple-text">
+                            Oppaly
+                        </a>
+                    </div>
+                    <ul class="nav">
+                        <li>
+                        <a class="nav-link active" href="{% url 'dashboard:createshop' %}">                
+                        <p>create shop</p>
+                        </a>
+                        </li>
+                        <li>
+                        <a class="nav-link" href="{% url 'dashboard:product'%}">
+                         <p>create products and category</p>
+                        </a>
+                        </li>
+                         <li>
+                            <a class="nav-link" href="{% url 'dashboard:updateshop' %}">
+                            <p>Add product</p>
+                            </a>
+                        </li>
+                      
+                        <li>
+                            <a class="nav-link active" href="{% url 'dashboard:dashboard' %}">
+                                <p>Orders</p>
+                            </a>
+                        </li>
+                       
+                        <li class="nav-item ">
+                            <a class="nav-link" href="{% url 'dashboard:refund' %}">
+                                
+                                <p>Refund Order</p>
+                            </a>
+                        </li>
+                        
+                      
+                        <li>
+                            <a class="nav-link" href="{% url 'dashboard:delete_products' %}">
+                          
+                                <p>Delete Products </p>
+                            </a>
+                        </li>
+                        <li>
+                        <a class="nav-link" href="{% url 'dashboard:shop_withdraw' %}">  
+                         <p>Withdraw</p>
+                         </a>
+                            </li>
+                      
+                            <li>
+                                <a class="nav-link" href="{% url 'dashboard:shop_settings' %}">
+                             <p>Shop settings</p>
+                            </a>
+                         </li>
+                         <li>
+                            <a class="nav-link" href="{% url 'dashboard:profile' %}">
+                         <p>Profile</p>
+                        </a>
+                     </li>
+                    </ul>
+                </div>
+            </div>
+                   
+        </div>
+        <div class="main-panel">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg " color-on-scroll="500">
+                <div class=" container-fluid  ">
+                    <a class="navbar-brand" > Dashboard </a>
+                    <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-bar burger-lines"></span>
+                        <span class="navbar-toggler-bar burger-lines"></span>
+                        <span class="navbar-toggler-bar burger-lines"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navigation">
+                        <ul class="nav navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link" data-toggle="dropdown">
+                                    
+                                    <span class="d-lg-none">Dashboard</span>
+                                </a>
+                            </li>
+                           
+                            
+                        </ul>
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#pablo">
+                                    <span class="no-icon">{{ user.email }}</span>
+                                </a>
+                            </li>
+                          
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'logout' %}">
+                                    <span class="no-icon">Log out</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+          
+              
+                    
+            <!-- End Navbar -->
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+ 
+                        <div class="card-body">
+                        <form method="POST" id="DeleteForm" data-order-item-url="{% url 'dashboard:delete_category' %}" novalidate>
+                                <div class="row">
+                                    <div class="col-md-5 pr-1">
+                                   
+                                        <div class="form-group">
+
+                                             {% csrf_token%}
+                                             
+                                             <select name="drop">
+                                             {% for category in categories %}
+                                             <option value="{{category.id}}"> Category:{{category.name}}</option>
+                                             {% endfor %}
+                                             </select>
+                                             
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-info btn-fill pull-center">delete category</button>
+                                <div class="clearfix"></div>
+                            </form>
+                        
+
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="container">
+                    <nav>
+                        <ul class="footer-menu">
+                            <li>
+                                <a href="#">
+                                    Home
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Company
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Portfolio
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Blog
+                                </a>
+                            </li>
+                        </ul>
+                        <p class="copyright text-center">
+                            ©
+                           
+                            <a>Oppaly</a>, For Africa
+                        </p>
+                    </nav>
+                </div>
+            </footer>
+        </div>
+    </div>
+  
+
+</body>
+<!--   Core JS Files   -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+<!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
+<script src="{% static 'js/plugins/bootstrap-switch.js' %}"></script>
+
+<!-- Control Center for Light Bootstrap Dashboard: scripts for the example pages etc -->
+<script src="{% static 'js/light-bootstrap-dashboard.js' %}" type="text/javascript"></script>
+
+
+</html>

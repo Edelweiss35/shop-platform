@@ -1,0 +1,430 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Sell more with a powerful eCommerce solution</title>
+    <link href="https://fonts.googleapis.com/css?family=Peralta" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="Sell more with powerful eCommerce">
+      <meta name="author" content="Creative Tim">
+      <title>Sell more with a powerful eCommerce solution</title>
+      <!-- Favicon -->
+      <link rel="shortcut icon" href="{% static 'img/favicon.png' %}">
+      <!-- Fonts -->
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!-- Icons -->
+      <link href="{% static 'js/vendor/nucleo/css/nucleo.css' %}" rel="stylesheet">
+      <link href="{% static 'js/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+      <script src="https://code.jquery.com/jquery-3.3.1.js"integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
+      <!-- Argon CSS -->
+      <link type="text/css" href="{%static 'css/argon.css' %}" rel="stylesheet">
+      <!-- Docs CSS -->
+      <!--- <link type="text/css" href="./assets/css/docs.min.css" rel="stylesheet"> -->
+    {% block stylesheet %}{% endblock %}
+    <style>
+      .sample-shop .button {
+        position: absolute;
+        width: 500px;
+        left:0;
+        top: 180px;
+        text-align: center;
+        opacity: 0;
+        transition: opacity .35s ease;
+      }
+
+      .sample-shop .button a {
+        width: 200px;
+        padding: 12px 48px;
+        text-align: center;
+        color: white;
+        border: solid 2px white;
+        z-index: 1;
+      }
+    
+
+      .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.5s ease;
+}
+
+.sample-shop:hover .overlay {
+  display: block;
+  background: rgba(0, 0, 0, .3);
+}
+
+.sample-shop:hover .button {
+  opacity: 1;
+}
+
+
+    </style>
+    
+  </head>
+  <body>
+      <main>
+        <section class="">
+        <section class="section section-lg section-shaped overflow-hidden my-0">
+          <div class="shape shape-style-1 shape-default shape-skew">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="container shape-container py-0 pb-5">
+            <div class="row row-grid justify-content-between align-items-center">
+              <div class="col-lg-6">
+                <h3 class="display-3 text-white">Professional online stores for entrepreneurs 
+                  <span class="text-white">Sell more with powerful eCommerce</span>
+                </h3>
+                <p class="lead text-white">Selling your products in many places should be every bit as simple as selling in one. With Oppaly’s ecommerce software, you get one unified platform to run your business with ease.</p>
+                <div class="btn-wrapper">
+                  <a href="{% url 'login' %}" class="btn btn-success">Login Page</a>
+                  <a href="{% url 'Accounts:signup' %}" class="btn btn-white">Register Page</a>
+                </div>
+              </div>
+              <div class="col-lg-5 mb-lg-auto">
+                <div class="transform-perspective-right">
+                  <div class="card bg-secondary shadow border-0 sample-shop"
+                   style="background:url('{{ STATIC_URL }}/static/shop-sample-img.png');
+                    background-repeat: no-repeat;
+                    height: 90vh;
+                    background-size: cover;">
+                    <div class="card-body px-lg-5 py-lg-5">
+                      <div class="text-center text-muted mb-4">
+                        
+                      </div>
+                      <div class="overlay"></div>
+                      <div class="button"><a href="#"> GET STARTED </a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="section section-lg">
+          <div class="container">
+            <div class="row row-grid align-items-center">
+              <div class="col-md-6 order-md-2">
+                <img src="{% static 'img/promo-1.png' %}" class="img-fluid floating">
+              </div>
+              <div class="col-md-6 order-md-1">
+                <div class="pr-md-5">
+                  <div class="icon icon-lg icon-shape icon-shape-success shadow rounded-circle mb-5">
+                      <i class="material-icons"> store</i>
+                  </div>
+                  <h3>Bring your eCommerce online store to life </h3>
+                  <p>Your customers will experience a seamless buying experience</p>
+                  <ul class="list-unstyled mt-5">
+                    <li class="py-2">
+                      <div class="d-flex align-items-center">
+                        <div>
+                          <div class="badge badge-circle badge-success mr-3">
+                              <i class="material-icons">
+                                  shop
+                                  </i>
+                          </div>
+                        </div>
+                        <div>
+                          <h6 class="mb-0">Manage unlimited products and inventory</h6>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="py-2">
+                      <div class="d-flex align-items-center">
+                        <div>
+                          <div class="badge badge-circle badge-success mr-3">
+                              <i class="material-icons">
+                                  receipt
+                                  </i>
+                          </div>
+                        </div>
+                        <div>
+                          <h6 class="mb-0">Fulfill orders in a single step </h6>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="py-2">
+                      <div class="d-flex align-items-center">
+                        <div>
+                          <div class="badge badge-circle badge-success mr-3">
+                          <i class="material-icons">trending_up</i>
+                          </div>
+                        </div>
+                        <div>
+                          <h6 class="mb-0"> Track sales and growth trends </h6>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="section section-lg section-shaped overflow-hidden my-0">
+          <div class="shape shape-style-1 shape-default shape-skew">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="container py-0">
+            <div class="row row-grid align-items-center">
+              <div class="col-md-6 order-lg-2 ml-lg-auto">
+                <div class="position-relative pl-md-5">
+                  <img src="{% static 'img/ill-2.svg' %}" class="img-center img-fluid">
+                </div>
+              </div>
+              <div class="col-lg-6 order-lg-1">
+                <div class="d-flex px-3">
+                  <div>
+                    <div class="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
+                      <i class="ni ni-building text-primary"></i>
+                    </div>
+                  </div>
+                  <div class="pl-4">
+                    <h4 class="display-3 text-white">Your brand, your way</h4>
+                    <p class="text-white">Establish your brand online with a custom domain name and online store</p>
+                  </div>
+                </div>
+                <div class="card shadow shadow-lg--hover mt-5">
+                  <div class="card-body">
+                    <div class="d-flex px-3">
+                      <div>
+                        <div class="icon icon-shape bg-gradient-success rounded-circle text-white">
+                          <i class="ni ni-satisfied"></i>
+                        </div>
+                      </div>
+                      <div class="pl-4">
+                        <h5 class="title text-success">Customizable theme</h5>
+                        <p>Our easy-to-use platform helps you to launch your online store quickly</p>
+                       
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card shadow shadow-lg--hover mt-5">
+                  <div class="card-body">
+                    <div class="d-flex px-3">
+                      <div>
+                        <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
+                          <i class="ni ni-active-40"></i>
+                        </div>
+                      </div>
+                      <div class="pl-4">
+                        <h5 class="title text-warning">Customizable product images</h5>
+                        <p>The platform display's your products in a user friendly way</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer has-cards">
+        <div class="container container-lg">
+          <div class="row">
+           
+          </div>
+        </div>
+        <div class="container">
+    
+            <div class="row  row-grid align-items-center my-md">
+                  
+                  <div class="container">
+                      <div class="row justify-content-center">
+                        <div class="col-lg-8 text-center">
+                          <h2 class="display-3">Accept all payment methods on your ecommerce store</h2>
+                          <p class="lead">
+                              Selling your products in many places should be every bit as simple as selling in one. With Oppaly’s ecommerce software, you get one unified platform to run your business with ease
+                          </p>
+                          <div class="blur--hover" style="pointer-events:none !important">
+                                 <style>
+                                   .constant-width-to-height-ratio {
+                                                background: transparent;
+                                                background-image: url('../media/payment-logo/new-logos.png');
+                                                
+                                                background-size: contain;
+                                                background-repeat: no-repeat;
+                                                width: 100%;
+                                              }
+                                              .constant-width-to-height-ratio::before {
+                                                content: '';
+                                                padding-top: 50%;
+                                                float: left;
+                                              }
+                                              .constant-width-to-height-ratio::after {
+                                                content: '';
+                                                display: block;
+                                                clear: both;
+                                              }
+                                 </style>
+                              <a href="#">
+                                <div class="icons-container blur-item mt-5 on-screen" data-toggle="on-screen">
+                                    <div class="constant-width-to-height-ratio">
+                                    </div>
+                                </div>
+                                <span class="blur-hidden h5 text-success btn btn-default m-auto">Get your shop online</span>
+                              </a>
+                            </div>
+                          <div class="btn-wrapper">
+                            <a href="#" class="btn btn-primary">Get started</a>
+                          </div>
+                        </div>
+                      </div>
+                      
+                    </div>
+
+                    
+            </div>
+            <div class="row row-grid align-item-center my-md">
+                  <!-- submit form -->
+                  <section class="section section-lg pt-lg-0 section-contact-us m-auto" style="padding-top: 20rem !important;">
+                      <div class="container">
+                        <script>
+                          console.log('trying to run this function')
+                      $('submit_message').change('submit', function(event){
+                       event.preventDefault();
+                       event.stopPropagation();
+
+                       console.log("sending campaign", formData)
+                       postMessage();
+                        });
+                        </script>
+
+                          <script>
+                            function postMessage() {
+                              console.log('triggered')
+                                $.ajax({
+                                  url : "{% url 'Accounts:campaign'%}", // the endpoint
+                                  type : "POST", // http method
+                                  headers: {'X-CSRFToken': '{{ csrf_token }}'},
+                                  data : JSON.stringify({ phone_number : $('#id_phone_number').val(),
+                                                          fullname :$('#id_fullname').val(),
+                                                          message  : $('#id_message').val() ,
+                                                          email    : $('#id_email').val()}), // data sent with the post request
+
+                                  // handle a successful response
+                                  success : function(json) {
+                                  console.log(data)  
+                                  console.log(json); // log the returned json to the console
+                                  console.log("success"); // another sanity check
+                                  },
+
+                                  // handle a non-successful response
+                                  error : function(xhr,errmsg,err) {
+                                      $('#results').html("<div class='alert-box alert radius' data-alert>Oops! We have encountered an error: "+errmsg+
+                                          " <a href='#' class='close'>&times;</a></div>"); // add the error to the dom
+                                      console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
+                                  }
+                              });
+                              
+                            };
+                        </script>
+                       
+                     
+                    </section>
+                  <!-- end submit form -->
+            
+            </div>
+            <div class="row justify-content-center mt--300">
+                <div class="col-lg-8">
+                  <div class="card bg-gradient-secondary shadow">
+                    <div class="card-body p-lg-5" width = 100>
+                        <form method="POST"  id="messageform" >
+                            <h4 class="mb-1">Get in touch with us?</h4>
+                            <p class="mt-0">Sell more with a powerful eCommerce solution</p>
+                            <div class="form-group mb-4">
+                                {% csrf_token %} 
+                                {{campaign_form.as_p}}
+                            </div>
+                            <button type="submit" class="btn btn-default btn-round btn-block btn-lg" id ="submit_message">Send Message</button>
+                            <script>
+                              $( "#submit_message" ).click(function() {
+                                console.log('clicked');
+                                postMessage();
+                                 
+                                      });
+                              </script>
+                          </form>
+                          </div>
+                        
+                  </div>
+                </div>
+              </div>
+          <div class="row row-grid align-items-center my-md">
+            <div class="col-lg-6">
+              <h3 class="text-primary font-weight-light mb-2">Thank you for supporting us!</h3>
+              <h4 class="mb-0 font-weight-light">Let's get in touch on any of these platforms.</h4>
+            </div>
+            <div class="col-lg-6 text-lg-center btn-wrapper">
+              <a target="_blank" href=# class="btn btn-neutral btn-icon-only btn-twitter btn-round btn-lg" data-toggle="tooltip" data-original-title="Follow us">
+                <i class="fa fa-twitter"></i>
+              </a>
+              <a target="_blank" href=# class="btn btn-neutral btn-icon-only btn-facebook btn-round btn-lg" data-toggle="tooltip" data-original-title="Like us">
+                <i class="fa fa-facebook-square"></i>
+              </a>
+              <a target="_blank" href=# class="btn btn-neutral btn-icon-only btn-instagram btn-lg btn-round" data-toggle="tooltip" data-original-title="Follow us">
+                <i class="fa fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+          <hr>
+          <div class="row align-items-center justify-content-md-between">
+            <div class="col-md-6">
+              <div class="copyright">
+                &copy; 2018
+                <a href="https://www.oppaly.com" target="_blank">Oppaly</a>.
+              </div>
+            </div>
+            <div class="col-md-6">
+              <ul class="nav nav-footer justify-content-end">
+                <li class="nav-item">
+                  <a href=# class="nav-link" target="_blank">FAQ</a>
+                </li>
+                <li class="nav-item">
+                  <a href=# class="nav-link" target="_blank">About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a href=# class="nav-link" target="_blank">Blog</a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link" target="_blank">Terms of Use</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- Core -->
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+      <script src="{% static 'js/vendor/headroom/headroom.min.js' %}"></script>
+      <!-- Optional JS -->
+      <script src="{% static 'js/vendor/onscreen/onscreen.min.js' %}"></script>
+      <script src="{% static 'js/vendor/nouislider/nouislider.min.js' %}"></script>
+      <script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+      <!-- Argon JS -->
+      <script src="{% static 'js/argon.js' %}"></script>
+  </body>
+</html>
